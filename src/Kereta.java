@@ -3,7 +3,7 @@ public class Kereta {
     private Ticket tickets; // objek Ticket untuk menyimpan tiket-tiket yang dipesan untuk satu kereta
     private String namaKereta; // untuk menyimpan nama kereta
     private int sisaTiket; // untuk mennyimpan sisa tiket kereta KAJJ
-    private int jumlahTiket = 0; // untuk menyimpan sudah berapa banyak kereta yang dipesan, default nilai 0
+    private int jumlahTiket = 0; // untuk menyimpan sudah berapa banyak tiket kereta yang dipesan, default nilai 0
 
     // constructor default, tanpa parameter, untuk kereta komuter
     public Kereta() {
@@ -28,7 +28,7 @@ public class Kereta {
             System.arraycopy(tickets.getNamaPenumpang(), 0, tempNama, 0, tickets.getNamaPenumpang().length);
             // masukkan nama penumpang baru ke tempNama dengan index jumlahTiket, diambil dari parameter namaPenumpang
             tempNama[jumlahTiket] = namaPenumpang;
-            // lalu ganti nilai array nama penumpang di objek tickets dengan array tempNama menggunakan setNamaPenumpang
+            // lalu ganti nilai array nama penumpang di objek tickets dengan array tempNama menggunakan setNamaPenumpang()
             tickets.setNamaPenumpang(tempNama);
             // increment variabel jumlahTiket
             jumlahTiket++;
@@ -52,7 +52,7 @@ public class Kereta {
             System.arraycopy(tickets.getNamaPenumpang(), 0, tempNama, 0, tickets.getNamaPenumpang().length);
             // masukkan nama penumpang baru ke tempNama dengan index jumlahTiket, diambil dari parameter namaPenumpang
             tempNama[jumlahTiket] = namaPenumpang;
-             // lalu ganti nilai array nama penumpang di objek tickets dengan array tempNama menggunakan setNamaPenumpang
+             // lalu ganti nilai array nama penumpang di objek tickets dengan array tempNama menggunakan setNamaPenumpang()
             tickets.setNamaPenumpang(tempNama);
             // buat array sementara untuk menyimpan asal penumpang dengan length jumlahTiket saat ini ditambah 1
             String[] tempAsal = new String[jumlahTiket + 1];
@@ -60,7 +60,7 @@ public class Kereta {
             System.arraycopy(tickets.getAsal(), 0, tempAsal, 0, tickets.getAsal().length);
             // masukkan asal penumpang baru ke tempAsal dengan index jumlahTiket, diambil dari parameter asal
             tempAsal[jumlahTiket] = asal;
-             // lalu ganti nilai array asal penumpang di objek tickets dengan array tempAsal menggunakan setAsal
+             // lalu ganti nilai array asal penumpang di objek tickets dengan array tempAsal menggunakan setAsal()
             tickets.setAsal(tempAsal);
             // buat array sementara untuk menyimpan tujuan penumpang dengan length jumlahTiket saat ini ditambah 1
             String[] tempTujuan = new String[jumlahTiket + 1];
@@ -68,7 +68,7 @@ public class Kereta {
             System.arraycopy(tickets.getTujuan(), 0, tempTujuan, 0, tickets.getTujuan().length);
             // masukkan tujuan penumpang baru ke tempTujuan dengan index jumlahTiket, diambil dari parameter tujuan
             tempTujuan[jumlahTiket] = tujuan;
-             // lalu ganti nilai array tujuan penumpang di objek tickets dengan array tempTujuan menggunakan setTujuan
+             // lalu ganti nilai array tujuan penumpang di objek tickets dengan array tempTujuan menggunakan setTujuan()
             tickets.setTujuan(tempTujuan);
             // increment variabel jumlahTiket
             jumlahTiket++;
@@ -92,14 +92,14 @@ public class Kereta {
         for (int i = 0; i < jumlahTiket; i++) {
             // mennguanakan if else untuk menngecek apakah kereta termasuk komuter atau KAJJ dengan melihat nama kereta
             if (namaKereta.equals("komuter")) {
-                // print semua nama penumpang, diambil dari getNamaPenumpang dengan index i
+                // print semua nama penumpang, diambil dari getNamaPenumpang() dengan index i
                 System.out.println("Nama: " + tickets.getNamaPenumpang()[i]);
             } else {
-                // print semua nama penumpang, diambil dari getNamaPenumpang dengan index i
+                // print semua nama penumpang, diambil dari getNamaPenumpang() dengan index i
                 System.out.println("Nama: " + tickets.getNamaPenumpang()[i]);
-                // print semua asal penumpang, diambil dari getAsal dengan index i
+                // print semua asal penumpang, diambil dari getAsal() dengan index i
                 System.out.println("Asal: " + tickets.getAsal()[i]);
-                // print semua tujuan penumpang, diambil dari getTujuan dengan index i
+                // print semua tujuan penumpang, diambil dari getTujuan() dengan index i
                 System.out.println("Tujuan: " + tickets.getTujuan()[i]);
                 System.out.println("--------------------------------");
             }
